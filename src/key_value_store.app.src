@@ -1,0 +1,8 @@
+{application, key_value_store,
+  [
+    {description, ""},
+    {vsn, "1"},
+    {applications, [cowboy]},
+    {mod, {key_value_store_app, []}},
+    {env, [{http_port, 8080}, {tcp_port, 9023}, {udp_port, 9024}]}
+  ]}.
