@@ -1,0 +1,27 @@
+KeyValueStore is in-memory program for storing key-value data.
+
+USAGE:
+	- rebar get-deps compile
+	- erl -pa ebin deps/*/ebin -s key_value_store
+
+TEST REST API:
+	- start application
+	- POST: curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d "{\"key\": \"1\", \"value\":\"232\"}" http://localhost:8080/data/
+	- GET: curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/data/
+	- GET by Id: curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/data/1
+
+TEST UDP:
+	- start application
+	- netcat -u localhost 9024
+	- Add:'key':'value'
+	- GetAll:
+	- Get:'Key'
+TEST TCP:
+	- start application
+	- telnet localhost 9023
+	- Add:'key':'value'
+	- GetAll:
+	- Get:'Key'
+
+Ports are configurable in key_value_store.app.src file for each protocol.
+	
