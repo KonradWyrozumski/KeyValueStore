@@ -1,8 +1,9 @@
 KeyValueStore is in-memory program for storing key-value data.
 
 USAGE:
-	- rebar get-deps compile
-	- erl -pa ebin deps/*/ebin -s key_value_store
+	- compile: make
+	- run: make run
+	- clean: make clean
 
 TEST REST API:
 	- start application
